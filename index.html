@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ładowanie - MineStar</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(#87CEEB, #4CAF50);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+}
+
+/* Napis */
+.loading-text {
+    font-size: 40px;
+    color: white;
+    text-shadow: 4px 4px 0 #000;
+    margin-bottom: 60px;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* KEBAB */
+.kebab {
+    width: 300px;
+    height: 80px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Tortilla */
+.wrap {
+    position: absolute;
+    width: 300px;
+    height: 80px;
+    background: #f4d28c;
+    border: 4px solid #c49a4a;
+    border-radius: 40px;
+    animation: roll 2.5s infinite ease-in-out;
+    transform-origin: left center;
+}
+
+/* Mięso */
+.meat {
+    width: 200px;
+    height: 50px;
+    background: #8B4513;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 2;
+}
+
+/* Sałata */
+.salad {
+    width: 220px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 10px;
+    position: absolute;
+    top: 15px;
+    z-index: 3;
+}
+
+/* Animacja zawijania */
+@keyframes roll {
+    0%   { transform: scaleX(1); }
+    50%  { transform: scaleX(0.3); }
+    100% { transform: scaleX(1); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="loading-text">Ładowanie...</div>
+
+<div class="kebab">
+    <div class="wrap"></div>
+    <div class="meat"></div>
+    <div class="salad"></div>
+</div>
+
+</body>
+</html>
